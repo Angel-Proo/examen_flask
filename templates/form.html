@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!--Ajax-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <title>Formulario</title>
+</head>
+<body>
+    <div class="container">
+        <!--Aqui va el formulario-->
+        <form action="" method="post" class="row">
+            {{form.hidden_tag()}}
+            <div class="mb-3 col-2">
+              {{form.usuario.label(class='form-label')}}
+              {{form.usuario(class='form-control')}}
+            </div>
+            <div class="mb-3 col-2">
+                {{form.contraseña.label(class='form-label')}}
+                {{form.contraseña(class='form-control')}}
+            </div>
+            <div class="mb-3 col-2">
+                {{form.area.label(class='form-label')}}
+                {{form.area(class='form-select', id='area_select')}}
+            </div>
+            <div class="mb-3 col-2">
+                {{form.puesto.label(class='form-label')}}
+                {{form.puesto(class='form-select', id='puesto_select')}}
+            </div class="mb-3 col-2 p-3">
+            {{form.boton(class='btn btn-success col-2')}}
+        </form>
+        <!--Aqui va el archivo objetos.js de javascript usa url_for para incluirlo-->
+        <script src="{{url_for('static', filename='js/objetos.js')}}"></script>
+    </div>
+</body>
+</html>
